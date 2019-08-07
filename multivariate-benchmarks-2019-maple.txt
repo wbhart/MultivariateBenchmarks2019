@@ -1,0 +1,268 @@
+Maple 2019
+
+Note: Maple does not internally use a fixed thread pool, so pinning threads is not effective. The server provided with Maple only had 16 cores, at least one of which was
+always in use. Therefore timings are only provided up to 12 cores. We did not try to
+control the performance governor or turbo settings for this machine as it did not belong
+to us.
+
+Maple 2019 Sparse mult (16, 16) ZZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Maple 2019 Sparse mult (16, 16) Z/pZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Maple 2019 Dense mult (30, 30) ZZ
+
+restart: kernelopts(numcpus=1):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=9.70MiB, cpu time=30.87s, real time=30.87s, gc time=60.40ms
+
+restart: kernelopts(numcpus=2):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=29.83s, real time=15.12s, gc time=18.52ms
+
+restart: kernelopts(numcpus=3):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=28.02s, real time=9.60s, gc time=18.75ms
+
+restart: kernelopts(numcpus=4):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=27.14s, real time=6.93s, gc time=18.87ms
+
+restart: kernelopts(numcpus=6):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=27.72s, real time=4.95s, gc time=18.12ms
+
+restart: kernelopts(numcpus=8):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=27.26s, real time=3.58s, gc time=19.11ms
+
+restart: kernelopts(numcpus=10):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=27.92s, real time=2.97s, gc time=18.82ms
+
+restart: kernelopts(numcpus=12):
+f:=expand((1+x+y+z+t)^30):
+g:=expand((1+x+y+z+t)^30):
+s:= CodeTools:-Usage(p=expand(f*g)):
+
+memory used=33.17MiB, alloc change=41.70MiB, cpu time=28.42s, real time=2.52s, gc time=19.32ms
+
+===========================================================================================
+
+Maple 2019 Dense mult (30, 30) Z/pZ
+
+restart: kernelopts(numcpus=1):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.86MiB, alloc change=41.70MiB, cpu time=30.97s, real time=30.97s, gc time=18.95ms
+
+restart: kernelopts(numcpus=2):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.87MiB, alloc change=41.70MiB, cpu time=29.56s, real time=15.00s, gc time=18.54ms
+
+restart: kernelopts(numcpus=3):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.87MiB, alloc change=41.70MiB, cpu time=27.84s, real time=9.42s, gc time=18.91ms
+
+restart: kernelopts(numcpus=4):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.87MiB, alloc change=41.70MiB, cpu time=27.15s, real time=6.97s, gc time=19.05ms
+
+restart: kernelopts(numcpus=6):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.86MiB, alloc change=41.70MiB, cpu time=26.81s, real time=4.62s, gc time=18.75ms
+
+restart: kernelopts(numcpus=8):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.86MiB, alloc change=41.70MiB, cpu time=27.08s, real time=3.55s, gc time=19.08ms
+
+restart: kernelopts(numcpus=10):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.87MiB, alloc change=41.70MiB, cpu time=27.79s, real time=2.93s, gc time=18.63ms
+
+restart: kernelopts(numcpus=12):
+p:=2^29-3;
+f:=expand((1+x+y+z+t)^30 mod p):
+g:=expand((1+x+y+z+t)^30 mod p):
+s:= CodeTools:-Usage(p=expand(f*g mod p)):
+
+memory used=32.87MiB, alloc change=41.70MiB, cpu time=28.08s, real time=2.47s, gc time=19.23ms
+
+===========================================================================================
+
+Maple 2019 Sparse div (16, 16) ZZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Maple 2019 Sparse div (16, 16) Z/pZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Maple 2019 Sparse gcd (7, 5), (4 8) ZZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Maple 2019 Sparse gcd (7, 5), (4 8) Z/pZ
+
+Unpredictable garbage collection totally dominates the timings, which do not scale with the number of cores and are not competitive.
+
+===========================================================================================
+
+Nemo 0.14.1 Dense (30, 30) ZZ
+
+using Nemo
+R, (x, y, z, t) = PolynomialRing(ZZ, ["x", "y", "z", "t"]; ordering=:deglex)
+f = (1 + x + y + z + t)^30;
+g = (1 + x + y + z + t)^30;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+ 5.786133 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+ 2.943087 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+ 2.038824 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+ 1.583714 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(6)
+@time p = f*g;
+
+ 1.096241 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(8)
+@time p = f*g;
+
+ 0.877897 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(10)
+@time p = f*g;
+
+ 0.715709 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(12)
+@time p = f*g;
+
+ 0.619744 seconds (5 allocations: 224 bytes)
+
+
+===========================================================================================
+
+Nemo 0.14.1 Dense (30, 30) Z/pZ
+
+using Nemo
+S = ResidueRing(ZZ, 2^29 - 3)
+R, (x, y, z, t) = PolynomialRing(S, ["x", "y", "z", "t"]; ordering=:deglex)
+f = (1 + x + y + z + t)^30;
+g = (1 + x + y + z + t)^30;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+ 4.567208 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+ 2.329153 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+ 1.590116 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+ 1.233488 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(6)
+@time p = f*g;
+
+ 0.891163 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(8)
+@time p = f*g;
+
+ 0.658098 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(10)
+@time p = f*g;
+
+ 0.575414 seconds (5 allocations: 224 bytes)
+
+flint_set_num_threads(12)
+@time p = f*g;
+
+ 0.494376 seconds (5 allocations: 224 bytes)

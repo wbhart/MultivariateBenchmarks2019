@@ -1,0 +1,387 @@
+
+
+Trip 1.4.62 : Sparse mul (16, 16) ZZ
+
+_modenum=NUMRATMP;
+_mode=POLPV;
+f=(1+x+y+2*z**2+3*t**3+5*u**5)**16$
+g=(1+u+t+2*z**2+3*y**3+5*x**5)**16$
+
+_cpu=1;
+time_s; q=f*g$ time_t;
+
+user 21.317s  - real 21.901s  - system 00.590s  - (100.02% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=2;
+time_s; q=f*g$ time_t;
+
+user 22.267s  - real 11.517s  - system 00.000s  - (193.33% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=3;
+time_s; q=f*g$ time_t;
+
+user 22.669s  - real 08.022s  - system 00.076s  - (283.51% CPU)
+
+
+delete(q)$
+q=0$
+
+_cpu=4;
+time_s; q=f*g$ time_t;
+
+user 22.432s  - real 06.021s  - system 00.072s  - (373.72% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=6;
+time_s; q=f*g$ time_t;
+
+user 22.359s  - real 03.957s  - system 00.210s  - (570.28% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=8;
+time_s; q=f*g$ time_t;
+
+user 22.961s  - real 03.285s  - system 00.322s  - (708.65% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=10;
+time_s; q=f*g$ time_t;
+
+user 24.658s  - real 02.682s  - system 00.240s  - (928.20% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=12;
+time_s; q=f*g$ time_t;
+
+user 24.607s  - real 02.295s  - system 00.372s  - (1088.22% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=14;
+time_s; q=f*g$ time_t;
+
+user 24.662s  - real 02.066s  - system 00.567s  - (1221.03% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=16;
+time_s; q=f*g$ time_t;
+
+user 25.412s  - real 01.962s  - system 00.526s  - (1321.64% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=20;
+time_s; q=f*g$ time_t;
+
+user 28.736s  - real 01.793s  - system 00.830s  - (1648.29% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=24;
+time_s; q=f*g$ time_t;
+
+user 33.470s  - real 01.732s  - system 01.004s  - (1990.32% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=28;
+time_s; q=f*g$ time_t;
+
+user 37.087s  - real 01.619s  - system 01.373s  - (2375.48% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=32;
+time_s; q=f*g$ time_t;
+
+user 39.967s  - real 01.533s  - system 00.905s  - (2664.98% CPU)
+
+====================================================================
+
+Trip 1.4.62 : Sparse mul (16, 16) Z/pZ
+
+Not available in Trip
+
+====================================================================
+
+Trip 1.4.62 : Sparse mul (20, 20) ZZ
+
+_modenum=NUMRATMP;
+_mode=POLPV;
+f=(1+x+y+2*z**2+3*t**3+5*u**5)**20$
+g=(1+u+t+2*z**2+3*y**3+5*x**5)**20$
+
+_cpu=1;
+time_s; q=f*g$ time_t;
+
+user 02m08.114s  - real 02m09.609s  - system 01.534s  - (100.03% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=2;
+time_s; q=f*g$ time_t;
+
+user 02m11.267s  - real 01m07.199s  - system 00.779s  - (196.49% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=3;
+time_s; q=f*g$ time_t;
+
+user 02m11.537s  - real 45.705s  - system 01.064s  - (290.12% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=4;
+time_s; q=f*g$ time_t;
+
+user 02m10.166s  - real 33.365s  - system 01.320s  - (394.08% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=6;
+time_s; q=f*g$ time_t;
+
+user 02m11.294s  - real 22.869s  - system 02.215s  - (583.80% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=8;
+time_s; q=f*g$ time_t;
+
+user 02m11.567s  - real 17.329s  - system 02.259s  - (772.24% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=10;
+time_s; q=f*g$ time_t;
+
+user 02m24.621s  - real 15.467s  - system 03.595s  - (958.23% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=12;
+time_s; q=f*g$ time_t;
+
+user 02m23.148s  - real 12.867s  - system 03.229s  - (1137.54% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=14;
+time_s; q=f*g$ time_t;
+
+user 02m21.572s  - real 10.954s  - system 03.343s  - (1322.93% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=16;
+time_s; q=f*g$ time_t;
+
+user 02m25.899s  - real 10.103s  - system 04.161s  - (1485.29% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=20;
+time_s; q=f*g$ time_t;
+
+user 02m46.914s  - real 09.392s  - system 05.143s  - (1831.94% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=24;
+time_s; q=f*g$ time_t;
+
+user 03m11.759s  - real 09.078s  - system 06.437s  - (2183.18% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=28;
+time_s; q=f*g$ time_t;
+
+user 03m35.147s  - real 08.872s  - system 07.477s  - (2509.23% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=32;
+time_s; q=f*g$ time_t;
+
+user 03m50.576s  - real 08.571s  - system 09.532s  - (2801.13% CPU)
+
+========================================================================
+
+Trip 1.4.62 : Sparse mul (20, 20) Z/pZ
+
+Not available in Trip
+
+========================================================================
+
+
+Trip 1.4.62 : Dense (30, 30) ZZ
+
+_modenum=NUMRATMP;
+_mode=POLPV;
+f=(1+x+y+z+t)**30$
+g=(1+x+y+z+t)**30$
+
+_cpu=1;
+time_s; q=f*g$ time_t;
+
+user 24.433s  - real 24.426s  - system 00.000s  - (100.02% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=2;
+time_s; q=f*g$ time_t;
+
+user 24.541s  - real 12.287s  - system 00.000s  - (199.72% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=3;
+time_s; q=f*g$ time_t;
+
+user 24.616s  - real 08.298s  - system 00.000s  - (296.65% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=4;
+time_s; q=f*g$ time_t;
+
+user 24.561s  - real 06.214s  - system 00.000s  - (395.20% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=6;
+time_s; q=f*g$ time_t;
+
+user 24.572s  - real 04.236s  - system 00.000s  - (580.04% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=8;
+time_s; q=f*g$ time_t;
+
+user 24.528s  - real 03.173s  - system 00.000s  - (773.03% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=10;
+time_s; q=f*g$ time_t;
+
+user 27.963s  - real 02.873s  - system 00.000s  - (973.05% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=12;
+time_s; q=f*g$ time_t;
+
+user 27.360s  - real 02.465s  - system 00.000s  - (1109.72% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=14;
+time_s; q=f*g$ time_t;
+
+user 26.912s  - real 02.011s  - system 00.000s  - (1338.00% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=16;
+time_s; q=f*g$ time_t;
+
+user 26.635s  - real 01.782s  - system 00.000s  - (1494.28% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=20;
+time_s; q=f*g$ time_t;
+
+user 30.231s  - real 01.637s  - system 00.000s  - (1846.03% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=24;
+time_s; q=f*g$ time_t;
+
+user 34.543s  - real 01.595s  - system 00.000s  - (2165.14% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=28;
+time_s; q=f*g$ time_t;
+
+user 38.744s  - real 01.492s  - system 00.000s  - (2596.72% CPU)
+
+delete(q)$
+q=0$
+
+_cpu=32;
+time_s; q=f*g$ time_t;
+
+user 41.078s  - real 01.484s  - system 00.000s  - (2767.39% CPU)
+
+========================================================================
+
+
+Trip 1.4.62 : Dense mul (30, 30) Z/pZ
+
+Not available in Trip
+
+
+========================================================================
+
+Trip does not provide exact division of polynomials. It only provides
+Euclidean division (i.e. division with remainder) which is not optimised
+and far too slow to run our benchmarks.
+
+========================================================================
+
+Trip does not provide gcd of polynomials
+
+========================================================================

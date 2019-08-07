@@ -1,0 +1,534 @@
+Giac 1.5.0 (stable) Sparse mult (16, 16) ZZ
+
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^16, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^16, [x,y,z,t,u]):;
+
+threads:=1;
+time(q:=f*g);
+
+[18.27,18.2656398]
+
+threads:=2;
+time(q:=f*g);
+
+[26.87,16.1582113]
+
+threads:=3;
+time(q:=f*g);
+
+[34.26,18.6141322]
+
+threads:=4;
+time(q:=f*g);
+
+[31.0,13.4096672]
+
+===========================================================================================
+
+Giac 1.5.0 (stable) Sparse mult (16, 16) Z/pZ
+
+p:=2^29-3;
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^16 % p, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^16 % p, [x,y,z,t,u]):;
+
+threads:=1;
+time(q:=f*g);
+
+[152.78,152.7757438]
+
+threads:=2;
+time(q:=f*g);
+
+[153.41,153.4295159]
+
+threads:=3;
+time(q:=f*g);
+
+[157.52,157.6417368]
+
+threads:=4;
+time(q:=f*g);
+
+[152.75,152.7654485]
+
+===========================================================================================
+
+Giac 1.5.0 (stable)  Sparse mult (20, 20) ZZ
+
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^20, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^20, [x,y,z,t,u]):;
+
+threads:=1;
+time(q:=f*g);
+
+[161.81,161.8036865]
+
+threads:=2;
+time(q:=f*g);
+
+[205.64,216.5804809]
+
+threads:=3;
+time(q:=f*g);
+
+[183.42,191.3175556]
+
+threads:=4;
+time(q:=f*g);
+
+[188.8,195.9815684]
+
+===========================================================================================
+
+Giac 1.5.0 (stable)  Sparse mult (20, 20) Z/pZ
+
+p:=2^29-3;
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^20 % p, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^20 % p, [x,y,z,t,u]):;
+
+threads:=1;
+time(q:=f*g);
+
+This did not finish in a reasonable time.
+
+threads:=2;
+time(q:=f*g);
+
+This did not finish in a reasonable time.
+
+threads:=3;
+time(q:=f*g);
+
+This did not finish in a reasonable time.
+
+threads:=4;
+time(q:=f*g);
+
+This did not finish in a reasonable time.
+
+===========================================================================================
+
+Giac 1.5.0 (stable)  Dense mult (30, 30) ZZ
+
+f:=symb2poly((1+x+y+z+t)^30, [x,y,z,t]):;
+
+g:=symb2poly((1+x+y+z+t)^30, [x,y,z,t]):;
+
+threads:=1;
+time(q:=f*g);
+
+[5.65,5.6533983]
+
+threads:=2;
+time(q:=f*g);
+
+[6.5,3.6434174]
+
+threads:=3;
+time(q:=f*g);
+
+[6.31,2.6428501]
+
+threads:=4;
+time(q:=f*g);
+
+[7.17,2.4010666]
+
+===========================================================================================
+
+Giac 1.5.0 (stable)  Dense mult (30, 30) Z/pZ
+
+p:=2^29-3;
+f:=symb2poly((1+x+y+z+t)^30 % p, [x,y,z,t]):;
+
+g:=symb2poly((1+x+y+z+t)^30 % p, [x,y,z,t]):;
+
+threads:=1;
+time(q:=f*g);
+
+[4.13,4.1181796]
+
+threads:=2;
+time(q:=f*g);
+
+[5.05,2.6086919]
+
+threads:=3;
+time(q:=f*g);
+
+[4.55,1.8292092]
+
+threads:=4;
+time(q:=f*g);
+
+[5.12,1.6104297]
+
+===========================================================================================
+
+Giac 1.5.0 (stable) Sparse quotient only division (16, 16) ZZ
+
+Note that the -2 option is for quotient only, where the remainder is not known to be zero.
+This seems to most exactly match what we are doing. Giac also supports an option of 2 which
+means that the remainder is known to be zero. Note that symb2poly(1, [x, y, z, t, u])
+triggers a bug in giac. If q is replaced with f*g + 1, symb2poly should not be used for the 1.
+
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^16, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^16, [x,y,z,t,u]):;
+
+threads:=4;
+time(q:=f*g);
+
+threads:=1;
+time(r:=quo(q, g, -2));
+
+[3.39,3.3842408]
+
+threads:=2;
+time(r:=quo(q, g, -2));
+
+[3.0,3.0128332]
+
+threads:=3;
+time(r:=quo(q, g, -2));
+
+[3.02,3.0149369]
+
+threads:=4;
+time(r:=quo(q, g, -2));
+
+[3.0,3.0079723]
+
+===========================================================================================
+
+Giac 1.5.0 (stable) Sparse quotient only division (16, 16) Z/pZ
+
+p:=2^29-3;
+f:=symb2poly((1+x+y+2*z^2+3*t^3+5*u^5)^16 % p, [x,y,z,t,u]):;
+
+g:=symb2poly((1+u+t+2*z^2+3*y^3+5*x^5)^16 % p, [x,y,z,t,u]):;
+
+time(q:=f*g);
+
+threads:=1;
+time(r:=quo(q, g, -2));
+
+[74.55,74.5746391]
+
+threads:=2;
+time(r:=quo(q, g, -2));
+
+[79.94,72.5717235]
+
+threads:=3;
+time(r:=quo(q, g, -2));
+
+[82.05,72.0009477]
+
+threads:=4;
+time(r:=quo(q, g, -2));
+
+[84.16,71.5457201]
+
+===========================================================================================
+
+Giac 1.5.0 (stable) Sparse gcd (7, 5), (4, 8) ZZ
+
+Giac was applying a suboptimal algorithm. With a patch provided by Bernard Parisse, the timings are as show in the second lot of timings in each case.
+
+a:=symb2poly(1+x+y^2+z^6+t^4+u^9, [x,y,z,t,u]):;
+
+b:=symb2poly(1+x^9+y^4+z^3+t^7+u, [x,y,z,t,u]):;
+
+time(f:=a^7*b^5);
+time(g:=a^4*b^8);
+
+threads:=1;
+time(d:=gcd(f, g));
+
+[400.9,400.9217545]    [41.61,41.6046733]
+
+threads:=2;
+time(d:=gcd(f, g));
+
+[406.06,398.3686458]   [45.71,38.798933]
+
+threads:=3;
+time(d:=gcd(f, g));
+
+[413.16,401.3472248]   [48.69,37.472129]
+
+threads:=4;
+time(d:=gcd(f, g));
+
+[415.48,400.9452894]   [50.41,36.7539236]
+
+===========================================================================================
+
+Nemo 0.14.0 Sparse mult (16, 16) ZZ
+
+R, (x, y, z, t, u) = PolynomialRing(ZZ, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^16;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^16;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+11.981640 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+7.418226 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+5.912174
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+5.670699
+
+===========================================================================================
+
+Nemo 0.14.0 Sparse mult (16, 16) Z/pZ
+
+p = 2^29 - 3
+K = ResidueRing(ZZ, p)
+R, (x, y, z, t, u) = PolynomialRing(K, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^16;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^16;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+7.850518 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+4.853709 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+3.492118 seconds
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+2.770067 seconds
+
+===========================================================================================
+
+Nemo 0.14.0 Sparse mult (20, 20) ZZ
+
+R, (x, y, z, t, u) = PolynomialRing(ZZ, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^20;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^20;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+92.197267 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+63.477529 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+40.707511 seconds
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+36.748370 seconds
+
+===========================================================================================
+
+Nemo 0.14.0 Sparse mult (20, 20) Z/pZ
+
+p = 2^29 - 3
+K = ResidueRing(ZZ, p)
+R, (x, y, z, t, u) = PolynomialRing(K, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^20;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^20;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+45.298837 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+24.956079 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+18.115915 seconds
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+14.671883 seconds
+
+===========================================================================================
+
+Nemo 0.14.0 Dense mult (30, 30) ZZ
+
+R, (x, y, z, t) = PolynomialRing(ZZ, ["x", "y", "z", "t"])
+f = (1 + x + y + z + t)^30;
+g = (1 + x + y + z + t)^30;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+3.609756 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+1.905287 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+1.288983 seconds
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+0.990491 seconds
+
+===========================================================================================
+
+Nemo 0.14.0 Dense mult (30, 30) Z/pZ
+
+p = 2^29 - 3
+K = ResidueRing(ZZ, p)
+R, (x, y, z, t) = PolynomialRing(K, ["x", "y", "z", "t"])
+f = (1 + x + y + z + t)^30;
+g = (1 + x + y + z + t)^30;
+
+flint_set_num_threads(1)
+@time p = f*g;
+
+2.728670 seconds
+
+flint_set_num_threads(2)
+@time p = f*g;
+
+1.452195 seconds
+
+flint_set_num_threads(3)
+@time p = f*g;
+
+1.008110 seconds
+
+flint_set_num_threads(4)
+@time p = f*g;
+
+0.752122 seconds
+
+===========================================================================================
+
+Nemo 0.14.0  Sparse quotient only division (16, 16) ZZ
+
+R, (x, y, z, t, u) = PolynomialRing(ZZ, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^16;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^16;
+p = f*g;
+
+flint_set_num_threads(1)
+@time q = div(p, g);
+
+0.090444 seconds
+
+flint_set_num_threads(2)
+@time q = div(p, g);
+
+0.098174 seconds
+
+flint_set_num_threads(3)
+@time q = div(p, g);
+
+0.095609 seconds
+
+flint_set_num_threads(4)
+@time q = div(p, g);
+
+0.089862
+
+===========================================================================================
+
+Nemo 0.14.0  Sparse quotient only division (16, 16) Z/pZ
+
+p = 2^29 - 3
+K = ResidueRing(ZZ, p)
+R, (x, y, z, t, u) = PolynomialRing(K, ["x", "y", "z", "t", "u"])
+f = (1+x+y+2*z^2+3*t^3+5*u^5)^16;
+g = (1+u+t+2*z^2+3*y^3+5*x^5)^16;
+p = f*g;
+
+flint_set_num_threads(1)
+@time q = div(p, g);
+
+0.002017 seconds
+
+flint_set_num_threads(2)
+@time q = div(p, g);
+
+0.002033 seconds
+
+flint_set_num_threads(3)
+@time q = div(p, g);
+
+0.002085 seconds
+
+flint_set_num_threads(4)
+@time q = div(p, g);
+
+0.001996 seconds
+
+===========================================================================================
+
+Nemo 0.14.0  Sparse gcd (7, 5), (4, 8) ZZ
+
+R, (x, y, z, t, u) = PolynomialRing(ZZ, ["x", "y", "z", "t", "u"])
+a = 1+x+y^2+z^6+t^4+u^9;
+b = 1+x^9+y^4+z^3+t^7+u
+f = a^7*b^5;
+g = a^4*b^8;
+
+
+flint_set_num_threads(1)
+@time d = gcd(f, g);
+
+14.806791 seconds
+
+flint_set_num_threads(2)
+@time d = gcd(f, g);
+
+8.027339 seconds
+
+flint_set_num_threads(3)
+@time d = gcd(f, g);
+
+5.312177 seconds
+
+flint_set_num_threads(4)
+@time d = gcd(f, g);
+
+4.222618 seconds
+
